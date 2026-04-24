@@ -1,0 +1,8 @@
+fastapi
+langchain
+langchain-chroma
+langchain-google-genai
+onnxruntime<1.20.0
+pandas
+python-dotenv
+uvicorn

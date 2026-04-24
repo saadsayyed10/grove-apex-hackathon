@@ -3,6 +3,8 @@ FROM node:22 AS builder
 
 WORKDIR /app
 
+RUN apt-get update -y && apt-get install -y openssl
+
 # Copy package files
 COPY package*.json ./
 
@@ -23,6 +25,8 @@ RUN npm run build
 FROM node:22-slim
 
 WORKDIR /app
+
+RUN apt-get update -y && apt-get install -y openssl
 
 # Copy only required files
 COPY --from=builder /app/package*.json ./
