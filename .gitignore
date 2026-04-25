@@ -1,6 +1,7 @@
 .vscode
 
 agent/.venv
+agent/.env
 
 backend/node_modules
 backend/dist
