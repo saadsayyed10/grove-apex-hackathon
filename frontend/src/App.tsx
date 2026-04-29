@@ -3,6 +3,7 @@ import { useAuth } from "@clerk/react";
 import { Loader2 } from "lucide-react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Waiting from "./_components/ApprovalWaiting/Waiting";
+import Dashboard from "./_components/Dashboard/Dashboard";
 
 const App = () => {
   const { isSignedIn, isLoaded } = useAuth();
@@ -20,6 +21,14 @@ const App = () => {
       <Routes>
         <Route
           path="/"
+          element={
+            <div>
+              <Dashboard />
+            </div>
+          }
+        />
+        <Route
+          path="/waiting"
           element={
             <div>
               <Waiting />
